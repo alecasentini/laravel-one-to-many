@@ -17,9 +17,10 @@ Portfolio | Project Show
 </p>
 
 
+{{-- questo dovrebbe essere la funzione corretta {{$project->type->name}} --}}
 
 <p>
-    Tipo: {{$project->category_id}}
+    Tipo:{{$project->category_id}}
 </p>
 
 @endsection
