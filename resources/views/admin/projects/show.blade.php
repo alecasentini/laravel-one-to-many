@@ -16,4 +16,10 @@ Portfolio | Project Show
     Cliente: {{$project->client}}
 </p>
 
+
+
+<p>
+    Tipo: {{$project->category_id}}
+</p>
+
 @endsection

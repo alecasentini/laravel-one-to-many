@@ -29,6 +29,7 @@ class StoreProjectRequest extends FormRequest
             'description' => ['required'],
             'client' => ['nullable'],
             'cover_image' => ['nullable', 'image', 'max:2000'],
+            'category_id' => ['nullable', 'exists:types,id'],
         ];
     }
 
@@ -39,7 +40,8 @@ class StoreProjectRequest extends FormRequest
             'name.unique' => 'Esiste già un project con quel nome',
             'description.required' => 'Il campo Description deve essere compilato',
             'cover_image.image' => 'Devi caricare un file image',
-            'cover_image.max' => 'Il file caricato non deve superare i 2000 KB'
+            'cover_image.max' => 'Il file caricato non deve superare i 2000 KB',
+            'category_id.exist' => 'Il Type non esiste',
         ];
     }
 }
