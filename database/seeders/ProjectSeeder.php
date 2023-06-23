@@ -4,9 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\DB;
 use Faker\Generator as Faker;
 use App\Models\Admin\Project;
+use App\Models\Admin\Type;
 
 use Illuminate\Support\Str;
 
@@ -19,8 +20,10 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
+
         for ($i = 0; $i < 10; $i++) {
             $new_project = new Project();
+
             $new_project->name = $faker->sentence;
             $new_project->client = $faker->company;
             $new_project->description = $faker->text(200);

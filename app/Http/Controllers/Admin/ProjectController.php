@@ -11,6 +11,8 @@ use App\Models\Admin\Type;
 
 use Illuminate\Support\Facades\Storage;
 
+use Illuminate\Support\Facades\DB;
+
 class ProjectController extends Controller
 {
     /**
@@ -86,8 +88,11 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        $type = DB::table('types')
+            ->where('id', $project->category_id)
+            ->first();
 
-        return view('admin.projects.show', compact('project'));
+        return view('admin.projects.show', compact('project', 'type'));
     }
 
     /**
